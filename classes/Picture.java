@@ -27,6 +27,19 @@ public class Picture extends SimplePicture
      */
     super();  
   }
+
+  public int getCountRedOverValue (int value) {
+    int count = 0;
+    Pixel [][] pixels = this.getPixels2D();
+    for (int x = 0; x < pixels.length; x++) {
+      for (int y = 0; y < pixels[0].length; y++) {
+        if (pixels[x][y].getRed() < value){
+          count++;
+        }
+      }
+    }
+       return count;
+  }
   
   /**
    * Constructor that takes a file name and creates the picture 
